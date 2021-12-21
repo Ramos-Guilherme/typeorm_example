@@ -13,8 +13,12 @@ module.exports  = {
     entities: [
         'src/core/data/database/entities/**/*'
     ],
+    migrations : [
+        'src/core/data/database/migrations/**/*'
+    ],
     cli: {
         entitiesDir: 'src/core/data/database/entities',
+        migrationsDir: 'src/core/data/database/migrations'
     },
     extra: {
         ssl: {
