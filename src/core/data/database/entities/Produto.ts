@@ -5,7 +5,7 @@ import {
 	Column,
 	Entity,
 	JoinColumn,
-	OneToMany,
+	ManyToOne,
 	OneToOne,
 	PrimaryColumn,
 } from "typeorm";
@@ -30,7 +30,7 @@ export class Produto extends BaseEntity {
 	@Column({ name: "updated_at" })
 	updatedAt?: Date;
 
-	@OneToMany(() => Categoria, (categoria) => categoria.produtos)
+	@ManyToOne(() => Categoria, (categoria) => categoria.produtos)
 	@JoinColumn({ name: "categoria_uid" })
 	categoria: Categoria;
 
